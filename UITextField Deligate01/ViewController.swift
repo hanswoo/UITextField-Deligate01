@@ -9,15 +9,22 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var lab: UILabel!
+    @IBOutlet weak var labs: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        labs.placeholder = "입력을 하세요!"
+        labs.clearButtonMode = UITextFieldViewMode.whileEditing
+        
     }
-
+    @IBAction func bt(_ sender: Any) {
+        lab.text = "Hello, " + labs.text!
+        labs.text = ""
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
 
