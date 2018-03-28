@@ -8,12 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var lab: UILabel!
     @IBOutlet weak var labs: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        labs.delegate = self
         labs.placeholder = "입력을 하세요!"
         labs.clearButtonMode = UITextFieldViewMode.whileEditing
         
@@ -22,6 +23,16 @@ class ViewController: UIViewController {
         lab.text = "Hello, " + labs.text!
         labs.text = ""
         labs.resignFirstResponder()
+        //view를 터치하면 키패드가 내려감
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        labs.resignFirstResponder()
+        view.backgroundColor = UIColor.black
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool{
+        labs.resignFirstResponder()
+        view.backgroundColor = UIColor.red
+        return true
+        
     }
     
     override func didReceiveMemoryWarning() {
