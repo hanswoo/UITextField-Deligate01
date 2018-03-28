@@ -21,6 +21,7 @@ class ViewController: UIViewController {
     @IBAction func bt(_ sender: Any) {
         lab.text = "Hello, " + labs.text!
         labs.text = ""
+        labs.resignFirstResponder()
     }
     
     override func didReceiveMemoryWarning() {
