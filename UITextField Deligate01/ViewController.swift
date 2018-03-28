@@ -28,6 +28,7 @@ class ViewController: UIViewController, UITextFieldDelegate{
         labs.resignFirstResponder()
         view.backgroundColor = UIColor.black
     }
+        //UITextFieldDelegate Method
     func textFieldShouldReturn(_ textField: UITextField) -> Bool{
         labs.resignFirstResponder()
         view.backgroundColor = UIColor.red
